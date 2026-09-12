@@ -76,167 +76,174 @@ export function Header({ groups, settings, navItems }: { groups: MenuGroup[]; se
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || megaOpen ? "border-b border-ink-100 bg-white/90 backdrop-blur-xl" : "border-b border-transparent bg-white/70 backdrop-blur-sm"
-      }`}
-    >
-      {/* Utility strip */}
-      <div className="hidden bg-ink-950 text-ink-300 lg:block">
-        <div className="container-x flex h-9 items-center justify-between text-[0.8rem]">
-          <p className="flex items-center gap-2">
-            <span className="size-1.5 animate-pulse rounded-full bg-aqua-400" />
-            {settings.header_notice}
-          </p>
-          <div className="flex items-center gap-5">
-            <a href={`tel:${settings.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-white">
-              {settings.phone}
-            </a>
-            <span className="text-ink-700">|</span>
-            <a href={`mailto:${settings.email}`} className="transition-colors hover:text-white">
-              {settings.email}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <nav className="container-x flex h-[68px] items-center justify-between gap-4" aria-label="Primary">
-        <Link href="/" className="shrink-0" aria-label={`${settings.brand_name} home`}>
-          <Logo />
-        </Link>
-
-        {/* Desktop nav */}
-        <ul className="hidden items-center gap-1 lg:flex">
-          {primaryNav.map((item) => (
-            <li
-              key={item.href}
-              className="relative"
-              onMouseEnter={item.mega ? openMega : scheduleClose}
-              onMouseLeave={item.mega ? scheduleClose : undefined}
-            >
-              {item.mega ? (
-                <button
-                  type="button"
-                  onClick={() => setMegaOpen((v) => !v)}
-                  aria-expanded={megaOpen}
-                  aria-haspopup="true"
-                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
-                    isActive(item.href) || megaOpen ? "text-brand-700" : "text-ink-700 hover:text-brand-700"
-                  }`}
-                >
-                  {item.label}
-                  <ChevronDown className={`size-4 transition-transform duration-300 ${megaOpen ? "rotate-180" : ""}`} aria-hidden />
-                </button>
-              ) : (
-                <Link
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
-                    isActive(item.href) ? "text-brand-700" : "text-ink-700 hover:text-brand-700"
-                  }`}
-                >
-                  {item.label}
-                  {item.badge ? (
-                    <span className="rounded-full bg-ember-500 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase leading-none text-white">
-                      {item.badge}
-                    </span>
-                  ) : null}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={`tel:${settings.phone.replace(/\s/g, "")}`}
-            className="hidden size-11 items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-colors hover:border-brand-300 hover:text-brand-700 sm:inline-flex lg:hidden xl:inline-flex"
-            aria-label="Call us"
-          >
-            <Phone className="size-4.5" strokeWidth={1.75} />
-          </a>
-          <ButtonLink href={settings.header_cta_href || "/contact"} size="md" className="hidden sm:inline-flex">
-            {settings.header_cta_label || "Free growth audit"}
-            <ArrowRight className="size-4" />
-          </ButtonLink>
-          <button
-            type="button"
-            onClick={() => {
-              setDrawerReady(true);
-              setMobileOpen(true);
-            }}
-            className="inline-flex size-11 items-center justify-center rounded-full border border-ink-200 text-ink-800 lg:hidden"
-            aria-label="Open menu"
-            aria-expanded={mobileOpen}
-          >
-            <Menu className="size-5" />
-          </button>
-        </div>
-      </nav>
-
-      {/* ------------------------------- Mega menu ------------------------------ */}
-      <div
-        onMouseEnter={openMega}
-        onMouseLeave={scheduleClose}
-        className={`absolute inset-x-0 top-full origin-top border-b border-ink-100 bg-white shadow-[0_30px_60px_-30px_rgba(20,24,48,0.35)] transition-all duration-300 ${
-          megaOpen ? "pointer-events-auto visible translate-y-0 opacity-100" : "pointer-events-none invisible -translate-y-2 opacity-0"
-        } hidden lg:block`}
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled || megaOpen ? "border-b border-ink-100 bg-white/90 backdrop-blur-xl" : "border-b border-transparent bg-white/70 backdrop-blur-sm"
+        }`}
       >
-        <div className="container-x py-8">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-9 xl:grid-cols-5">
-            {groups.map((group) => (
-              <div key={group.category.slug}>
-                <Link
-                  href={`/services#${group.category.slug}`}
-                  className="group mb-4 flex items-start gap-3 border-b border-ink-100 pb-3"
-                >
-                  <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-linear-to-br from-brand-500 to-aqua-500 text-white">
-                    <Icon name={group.category.icon} className="size-4.5" />
-                  </span>
-                  <span>
-                    <span className="block font-display text-[0.95rem] font-bold text-ink-900 transition-colors group-hover:text-brand-700">
-                      {group.category.name}
-                    </span>
-                    <span className="mt-0.5 block text-xs leading-snug text-ink-400">{group.category.blurb}</span>
-                  </span>
-                </Link>
-                <ul className="space-y-0.5">
-                  {group.services.map((service) => (
-                    <li key={service.slug}>
-                      <Link
-                        href={`/services/${service.slug}`}
-                        className="group flex items-center justify-between gap-2 rounded-lg px-2 py-[7px] text-[0.875rem] text-ink-600 transition-colors hover:bg-brand-50 hover:text-brand-700"
-                      >
-                        <span className="leading-snug">{service.menu_label}</span>
-                        <ArrowRight className="size-3.5 shrink-0 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink-50 px-6 py-5">
-            <div>
-              <p className="font-display text-[1.05rem] font-bold text-ink-900">{settings.menu_promo_title}</p>
-              <p className="mt-1 text-sm text-ink-500">{settings.menu_promo_text}</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <ButtonLink href="/services" variant="outline" size="sm">
-                All services
-              </ButtonLink>
-              <ButtonLink href={settings.menu_promo_cta_href || "/contact"} size="sm">
-                {settings.menu_promo_cta_label || "Book a free audit"}
-                <ArrowRight className="size-4" />
-              </ButtonLink>
+        {/* Utility strip */}
+        <div className="hidden bg-ink-950 text-ink-300 lg:block">
+          <div className="container-x flex h-9 items-center justify-between text-[0.8rem]">
+            <p className="flex items-center gap-2">
+              <span className="size-1.5 animate-pulse rounded-full bg-aqua-400" />
+              {settings.header_notice}
+            </p>
+            <div className="flex items-center gap-5">
+              <a href={`tel:${settings.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-white">
+                {settings.phone}
+              </a>
+              <span className="text-ink-700">|</span>
+              <a href={`mailto:${settings.email}`} className="transition-colors hover:text-white">
+                {settings.email}
+              </a>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ----------------------------- Mobile drawer ---------------------------- */}
+        <nav className="container-x flex h-[68px] items-center justify-between gap-4" aria-label="Primary">
+          {/* The wordmark is the only part allowed to shrink, so a long CMS-set CTA
+              label can never push the menu button past the right edge. */}
+          <Link href="/" className="min-w-0 shrink" aria-label={`${settings.brand_name} home`}>
+            <Logo />
+          </Link>
+
+          {/* Desktop nav */}
+          <ul className="hidden items-center gap-1 lg:flex">
+            {primaryNav.map((item) => (
+              <li
+                key={item.href}
+                className="relative"
+                onMouseEnter={item.mega ? openMega : scheduleClose}
+                onMouseLeave={item.mega ? scheduleClose : undefined}
+              >
+                {item.mega ? (
+                  <button
+                    type="button"
+                    onClick={() => setMegaOpen((v) => !v)}
+                    aria-expanded={megaOpen}
+                    aria-haspopup="true"
+                    className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
+                      isActive(item.href) || megaOpen ? "text-brand-700" : "text-ink-700 hover:text-brand-700"
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown className={`size-4 transition-transform duration-300 ${megaOpen ? "rotate-180" : ""}`} aria-hidden />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
+                      isActive(item.href) ? "text-brand-700" : "text-ink-700 hover:text-brand-700"
+                    }`}
+                  >
+                    {item.label}
+                    {item.badge ? (
+                      <span className="rounded-full bg-ember-500 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase leading-none text-white">
+                        {item.badge}
+                      </span>
+                    ) : null}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={`tel:${settings.phone.replace(/\s/g, "")}`}
+              className="hidden size-11 shrink-0 items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-colors hover:border-brand-300 hover:text-brand-700 sm:inline-flex lg:hidden xl:inline-flex"
+              aria-label="Call us"
+            >
+              <Phone className="size-4.5" strokeWidth={1.75} />
+            </a>
+            <ButtonLink href={settings.header_cta_href || "/contact"} size="md" className="hidden sm:inline-flex">
+              {settings.header_cta_label || "Free growth audit"}
+              <ArrowRight className="size-4 shrink-0" />
+            </ButtonLink>
+            <button
+              type="button"
+              onClick={() => {
+                setDrawerReady(true);
+                setMobileOpen(true);
+              }}
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-ink-200 text-ink-800 lg:hidden"
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+            >
+              <Menu className="size-5" />
+            </button>
+          </div>
+        </nav>
+
+        {/* ------------------------------- Mega menu ------------------------------ */}
+        <div
+          onMouseEnter={openMega}
+          onMouseLeave={scheduleClose}
+          className={`absolute inset-x-0 top-full origin-top border-b border-ink-100 bg-white shadow-[0_30px_60px_-30px_rgba(20,24,48,0.35)] transition-all duration-300 ${
+            megaOpen ? "pointer-events-auto visible translate-y-0 opacity-100" : "pointer-events-none invisible -translate-y-2 opacity-0"
+          } hidden lg:block`}
+        >
+          <div className="container-x py-8">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-9 xl:grid-cols-5">
+              {groups.map((group) => (
+                <div key={group.category.slug}>
+                  <Link
+                    href={`/services#${group.category.slug}`}
+                    className="group mb-4 flex items-start gap-3 border-b border-ink-100 pb-3"
+                  >
+                    <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-linear-to-br from-brand-500 to-aqua-500 text-white">
+                      <Icon name={group.category.icon} className="size-4.5" />
+                    </span>
+                    <span>
+                      <span className="block font-display text-[0.95rem] font-bold text-ink-900 transition-colors group-hover:text-brand-700">
+                        {group.category.name}
+                      </span>
+                      <span className="mt-0.5 block text-xs leading-snug text-ink-400">{group.category.blurb}</span>
+                    </span>
+                  </Link>
+                  <ul className="space-y-0.5">
+                    {group.services.map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="group flex items-center justify-between gap-2 rounded-lg px-2 py-[7px] text-[0.875rem] text-ink-600 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                        >
+                          <span className="leading-snug">{service.menu_label}</span>
+                          <ArrowRight className="size-3.5 shrink-0 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink-50 px-6 py-5">
+              <div>
+                <p className="font-display text-[1.05rem] font-bold text-ink-900">{settings.menu_promo_title}</p>
+                <p className="mt-1 text-sm text-ink-500">{settings.menu_promo_text}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <ButtonLink href="/services" variant="outline" size="sm">
+                  All services
+                </ButtonLink>
+                <ButtonLink href={settings.menu_promo_cta_href || "/contact"} size="sm">
+                  {settings.menu_promo_cta_label || "Book a free audit"}
+                  <ArrowRight className="size-4" />
+                </ButtonLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* --------------------------- Mobile drawer -----------------------------
+          Deliberately a sibling of <header>: the bar carries a backdrop-filter,
+          which makes it the containing block for fixed descendants and would
+          otherwise clip this drawer to the 68px strip. */}
       <div
         className={`fixed inset-0 z-50 lg:hidden ${mobileOpen ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!mobileOpen}
@@ -307,7 +314,7 @@ export function Header({ groups, settings, navItems }: { groups: MenuGroup[]; se
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
 

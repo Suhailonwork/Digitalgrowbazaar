@@ -89,7 +89,7 @@ export async function SiteFooter() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="size-4 shrink-0 text-aqua-400" />
-                <a href={`mailto:${settings.email}`} className="text-ink-300 transition-colors hover:text-white">
+                <a href={`mailto:${settings.email}`} className="min-w-0 wrap-anywhere text-ink-300 transition-colors hover:text-white">
                   {settings.email}
                 </a>
               </li>

@@ -28,7 +28,7 @@ export async function HomeContactSection() {
               <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600">
                 <Phone className="size-5" strokeWidth={1.75} />
               </span>
-              <span>
+              <span className="min-w-0">
                 <span className="block text-xs font-semibold uppercase tracking-wider text-ink-400">Call or WhatsApp</span>
                 <a href={`tel:${settings.phone.replace(/\s/g, "")}`} className="font-display text-lg font-bold text-ink-900 hover:text-brand-700">
                   {settings.phone}
@@ -39,9 +39,14 @@ export async function HomeContactSection() {
               <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600">
                 <Mail className="size-5" strokeWidth={1.75} />
               </span>
-              <span>
+              <span className="min-w-0">
                 <span className="block text-xs font-semibold uppercase tracking-wider text-ink-400">Email</span>
-                <a href={`mailto:${settings.email}`} className="font-display text-lg font-bold text-ink-900 hover:text-brand-700">
+                {/* An address is one unbreakable token: without wrap-anywhere its
+                    min-content width drags the whole page into sideways scroll. */}
+                <a
+                  href={`mailto:${settings.email}`}
+                  className="font-display text-base font-bold wrap-anywhere text-ink-900 hover:text-brand-700 sm:text-lg"
+                >
                   {settings.email}
                 </a>
               </span>
@@ -50,7 +55,7 @@ export async function HomeContactSection() {
               <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600">
                 <MapPin className="size-5" strokeWidth={1.75} />
               </span>
-              <span>
+              <span className="min-w-0">
                 <span className="block text-xs font-semibold uppercase tracking-wider text-ink-400">Studio & office</span>
                 <span className="block text-[0.98rem] font-medium text-ink-700">{settings.address}</span>
               </span>
@@ -59,7 +64,7 @@ export async function HomeContactSection() {
               <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-600">
                 <Clock className="size-5" strokeWidth={1.75} />
               </span>
-              <span>
+              <span className="min-w-0">
                 <span className="block text-xs font-semibold uppercase tracking-wider text-ink-400">Working hours</span>
                 <span className="block text-[0.98rem] font-medium text-ink-700">{siteConfig.hours}</span>
               </span>

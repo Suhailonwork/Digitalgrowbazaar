@@ -27,7 +27,9 @@ export async function Hero() {
             {hero.badge}
           </span>
 
-          <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white text-balance sm:text-5xl lg:text-[3.65rem]">
+          {/* Fluid below sm: the highlight span is nowrap so it can outrun a 320px
+              screen at a fixed 2.25rem. */}
+          <h1 className="mt-6 font-display text-[clamp(1.85rem,7.4vw,2.25rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white text-balance sm:text-5xl lg:text-[3.65rem]">
             {hero.title_lead}{" "}
             <span className="relative whitespace-nowrap">
               <span className="bg-linear-to-r from-aqua-300 via-brand-300 to-ember-400 bg-clip-text text-transparent">{hero.title_highlight}</span>
@@ -104,19 +106,24 @@ export async function Hero() {
               </div>
             </div>
 
-            <div className="absolute -left-6 -bottom-8 w-56 rounded-2xl border border-white/12 bg-ink-900/90 p-4 shadow-2xl backdrop-blur-xl sm:-left-10">
-              <p className="text-[0.7rem] uppercase tracking-wider text-ink-400">{hero.float_left_label}</p>
-              <p className="mt-1 font-display text-2xl font-bold text-white">
-                {hero.float_left_value} <span className="text-sm font-semibold text-aqua-400">{hero.float_left_delta}</span>
-              </p>
-              <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-4/5 rounded-full bg-linear-to-r from-brand-400 to-aqua-400" />
+            {/* These hang off the panel only once the hero splits into two columns.
+                Below that the panel is full width, so floating them would bury the
+                chart's own badge and metrics — stack them underneath instead. */}
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:mt-0 lg:block">
+              <div className="rounded-2xl border border-white/12 bg-ink-900/90 p-4 shadow-2xl backdrop-blur-xl lg:absolute lg:-bottom-8 lg:-left-10 lg:w-56">
+                <p className="text-[0.7rem] uppercase tracking-wider text-ink-400">{hero.float_left_label}</p>
+                <p className="mt-1 font-display text-2xl font-bold text-white">
+                  {hero.float_left_value} <span className="text-sm font-semibold text-aqua-400">{hero.float_left_delta}</span>
+                </p>
+                <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full w-4/5 rounded-full bg-linear-to-r from-brand-400 to-aqua-400" />
+                </div>
               </div>
-            </div>
 
-            <div className="absolute -right-3 -top-7 rounded-2xl border border-white/12 bg-ink-900/90 px-4 py-3 shadow-2xl backdrop-blur-xl sm:-right-8">
-              <p className="text-[0.7rem] uppercase tracking-wider text-ink-400">{hero.float_right_label}</p>
-              <p className="font-display text-xl font-bold text-white">{hero.float_right_value}</p>
+              <div className="rounded-2xl border border-white/12 bg-ink-900/90 px-4 py-3 shadow-2xl backdrop-blur-xl lg:absolute lg:-right-8 lg:-top-7">
+                <p className="text-[0.7rem] uppercase tracking-wider text-ink-400">{hero.float_right_label}</p>
+                <p className="font-display text-xl font-bold text-white">{hero.float_right_value}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ type Variant = "primary" | "ghost" | "outline" | "light";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 disabled:opacity-60 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold tracking-tight transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 disabled:opacity-60 disabled:pointer-events-none";
 
 const variants: Record<Variant, string> = {
   primary:
@@ -15,14 +15,26 @@ const variants: Record<Variant, string> = {
   light: "bg-white/10 text-white ring-1 ring-inset ring-white/25 backdrop-blur hover:bg-white/20 hover:-translate-y-0.5",
 };
 
+// min-h rather than h: a label long enough to wrap grows the pill instead of
+// spilling its text outside a fixed-height box.
 const sizes: Record<Size, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-11 px-5 text-[0.95rem]",
-  lg: "h-13 px-7 text-base",
+  sm: "min-h-9 px-4 py-2 text-sm",
+  md: "min-h-11 px-5 py-2.5 text-[0.95rem]",
+  lg: "min-h-13 px-7 py-3 text-base",
 };
 
+/**
+ * Tailwind orders utilities by its own canon, not by the order they appear in a
+ * class string, and it emits `inline-flex` after `hidden`. A call site passing
+ * "hidden sm:inline-flex" would therefore lose to the base class and the button
+ * would stay on screen at every width — so drop the base display whenever the
+ * caller supplies one of their own.
+ */
+const DISPLAY_UTILITY = /(?:^|\s)(?:[\w-]+:)*(?:hidden|flex|inline-flex|grid|inline-grid|block|inline-block|inline|contents)(?:\s|$)/;
+
 export function buttonClass(variant: Variant = "primary", size: Size = "md", extra = "") {
-  return `${base} ${variants[variant]} ${sizes[size]} ${extra}`.trim();
+  const layout = DISPLAY_UTILITY.test(extra) ? base.replace("inline-flex ", "") : base;
+  return `${layout} ${variants[variant]} ${sizes[size]} ${extra}`.trim();
 }
 
 export function ButtonLink({

@@ -63,7 +63,9 @@ export default async function ContactPage() {
                 <c.icon className="size-5" strokeWidth={1.75} />
               </span>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-400">{c.label}</p>
-              <p className="mt-1.5 font-display text-[1.02rem] font-bold leading-snug text-ink-900">{c.value}</p>
+              {/* Values come from settings — an email or URL is one unbreakable
+                  token, so let it break rather than widen the page. */}
+              <p className="mt-1.5 font-display text-[1.02rem] font-bold leading-snug wrap-anywhere text-ink-900">{c.value}</p>
               <p className="mt-1 text-xs text-ink-400">{c.note}</p>
             </a>
           ))}
