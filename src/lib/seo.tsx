@@ -117,7 +117,9 @@ export function organizationJsonLd() {
       { "@type": "City", name: "Delhi" },
       { "@type": "City", name: "Gurugram" },
     ],
-    openingHours: "Mo-Sa 10:00-19:00",
+    // Must mirror the hours shown on /contact — structured data that contradicts
+    // the visible page is discarded by Google rather than merely ignored.
+    openingHours: ["Mo-Fr 10:00-19:00", "Sa 10:00-16:00"],
     sameAs: Object.values(siteConfig.socials),
   };
 }
