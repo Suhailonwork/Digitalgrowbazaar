@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/about",
     title: "About Us | The Team Behind Digital Grow Bazaar",
     description:
-      "Founded in 2017 in Noida, Digital Grow Bazaar is a 40-person team of developers, marketers, editors and marketplace specialists helping Indian brands grow online.",
-    keywords: "about digital grow bazaar, digital marketing agency noida, ecommerce agency india, web development team noida",
+      "Founded in 2017 in Delhi, Digital Grow Bazaar is a 40-person team of developers, marketers, editors and marketplace specialists helping Indian brands grow online.",
+    keywords: "about digital grow bazaar, digital marketing agency Delhi, ecommerce agency india, web development team Delhi",
   });
 }
 
@@ -42,7 +42,7 @@ export default async function AboutPage() {
       <PageHero
         eyebrow="About us"
         title={<>We started because good work kept getting split across four vendors</>}
-        description="Digital Grow Bazaar is 40 people in Noida who build websites, run campaigns, shoot content and manage marketplace accounts — deliberately under one roof, because the handovers between agencies were where every project used to break."
+        description="Digital Grow Bazaar is 40 people in Delhi who build websites, run campaigns, shoot content and manage marketplace accounts — deliberately under one roof, because the handovers between agencies were where every project used to break."
         breadcrumbs={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]}
       >
         <div className="flex flex-wrap items-center gap-3.5">
@@ -113,7 +113,7 @@ export default async function AboutPage() {
             <div className="rounded-4xl border border-ink-100 bg-white p-8">
               <h2 className="font-display text-xl font-bold tracking-tight text-ink-900">Where we work from</h2>
               <p className="mt-3 leading-relaxed text-ink-500">
-                Our office and studio are in Sector 63, Noida. Roughly two-thirds of our clients are elsewhere in India and work with us entirely
+                Our office and studio are in Sector 63, Delhi. Roughly two-thirds of our clients are elsewhere in India and work with us entirely
                 remotely — Bengaluru, Jaipur, Surat, Ludhiana, Hyderabad and beyond.
               </p>
               <p className="mt-3 text-sm text-ink-400">{siteConfig.address.street}, {siteConfig.address.city} {siteConfig.address.postalCode}</p>

@@ -31,7 +31,7 @@ export default async function AdminSettingsPage() {
             <FormCard title="Contact details" description="Used in the header, footer, contact page and Organization schema.">
               <Field label="Phone" name="phone" required defaultValue={s.phone} />
               <Field label="Email" name="email" type="email" required defaultValue={s.email} />
-              <Field label="WhatsApp number" name="whatsapp" defaultValue={s.whatsapp} hint="Digits only, with country code: 919876543210" />
+              <Field label="WhatsApp number" name="whatsapp" defaultValue={s.whatsapp} hint="Digits only, with country code: 919818435920" />
               <TextArea label="Address" name="address" rows={2} defaultValue={s.address} />
             </FormCard>
           </div>

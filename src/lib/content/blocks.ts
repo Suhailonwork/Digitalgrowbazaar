@@ -162,8 +162,8 @@ export const homeFaqsBlock: FAQ[] = [
     a: "Website and e-commerce development, digital marketing (SEO, Google Ads, Meta Ads, social media, email and WhatsApp), videography and product photoshoots, e-commerce business training, and full account management for Amazon, Flipkart and Meesho.",
   },
   {
-    q: "Do you work with businesses outside Noida and Delhi NCR?",
-    a: "Yes. Around two-thirds of our clients are outside the NCR and we work with them entirely remotely. Photoshoots and videography can be arranged either at our Noida studio or on location in your city.",
+    q: "Do you work with businesses outside Delhi and Delhi NCR?",
+    a: "Yes. Around two-thirds of our clients are outside the NCR and we work with them entirely remotely. Photoshoots and videography can be arranged either at our Delhi studio or on location in your city.",
   },
   {
     q: "How much do your services cost?",
@@ -207,7 +207,7 @@ export const aboutValuesBlock: Pillar[] = [
 ];
 
 export const aboutTimelineBlock: TimelineItem[] = [
-  { year: "2017", title: "Two people, one room", body: "Started as a two-person web development shop in Noida, building sites for local manufacturers and traders." },
+  { year: "2017", title: "Two people, one room", body: "Started as a two-person web development shop in Delhi, building sites for local manufacturers and traders." },
   { year: "2019", title: "Marketing joins the stack", body: "Clients kept asking who would bring traffic to the sites we built, so we added SEO and paid media in-house." },
   { year: "2021", title: "The studio opens", body: "A dedicated photography and video studio, after one too many campaigns stalled waiting on client-supplied assets." },
   { year: "2023", title: "Marketplace practice", body: "A specialist team for Amazon, Flipkart and Meesho — today the fastest-growing part of the business." },
@@ -223,7 +223,7 @@ export const aboutTeamBlock: TeamItem[] = [
 
 export const contactFaqsBlock: FAQ[] = [
   { q: "How soon will someone get back to me?", a: "Within one working day, usually the same day if you write before 5 pm IST. Enquiries that come in over the weekend are answered on Monday morning." },
-  { q: "Can I visit your office or studio?", a: "Yes, we are in Sector 63, Noida. Call ahead so the right specialist is available, and we can show you the photography and video studio while you are here." },
+  { q: "Can I visit your office or studio?", a: "Yes, we are in Sector 63, Delhi. Call ahead so the right specialist is available, and we can show you the photography and video studio while you are here." },
   { q: "Do you offer a free consultation?", a: "Every new enquiry gets a free audit of whatever you share with us — website, ad account or seller panel — plus a 20-minute call to walk you through it." },
   { q: "Do you work with small businesses and new sellers?", a: "Regularly. Around 40% of our clients started with us before their first ₹1 lakh month. We will tell you honestly if a service is premature for your stage." },
 ];

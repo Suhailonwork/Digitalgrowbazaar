@@ -69,7 +69,7 @@ export function ContactForm({
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink-700">
             Phone / WhatsApp <span className="text-ember-500">*</span>
           </label>
-          <input id="phone" name="phone" type="tel" required autoComplete="tel" placeholder="+91 98765 43210" className={fieldBase} />
+          <input id="phone" name="phone" type="tel" required autoComplete="tel" placeholder="+91 9818435920" className={fieldBase} />
           {state.errors?.phone ? <p className="mt-1.5 text-xs text-ember-600">{state.errors.phone}</p> : null}
         </div>
       </div>

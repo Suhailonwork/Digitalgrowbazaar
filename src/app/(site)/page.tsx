@@ -20,9 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/",
     title: "Digital Grow Bazaar | Web Development, Digital Marketing & E-commerce Growth",
     description:
-      "Full-stack growth partner in Noida: website development, SEO and digital marketing, videography and product photoshoots, e-commerce training, and Amazon, Flipkart and Meesho account management.",
+      "Full-stack growth partner in Delhi: website development, SEO and digital marketing, videography and product photoshoots, e-commerce training, and Amazon, Flipkart and Meesho account management.",
     keywords:
-      "digital marketing agency noida, website development company india, ecommerce account management, amazon flipkart meesho seller services, product photoshoot, videography, ecommerce training",
+      "digital marketing agency Delhi, website development company india, ecommerce account management, amazon flipkart meesho seller services, product photoshoot, videography, ecommerce training",
   });
 }
 

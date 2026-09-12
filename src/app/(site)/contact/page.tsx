@@ -15,10 +15,10 @@ export const revalidate = 3600;
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     path: "/contact",
-    title: "Contact Us | Digital Grow Bazaar, Noida",
+    title: "Contact Us | Digital Grow Bazaar, Delhi",
     description:
       "Talk to Digital Grow Bazaar about web development, digital marketing, videography, photoshoots, e-commerce training or Amazon, Flipkart and Meesho account management. Free audit, reply within one working day.",
-    keywords: "contact digital marketing agency noida, ecommerce agency contact, website development enquiry, amazon account management contact",
+    keywords: "contact digital marketing agency Delhi, ecommerce agency contact, website development enquiry, amazon account management contact",
   });
 }
 

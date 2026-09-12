@@ -113,7 +113,7 @@ export function organizationJsonLd() {
     },
     areaServed: [
       { "@type": "Country", name: "India" },
-      { "@type": "City", name: "Noida" },
+      { "@type": "City", name: "Delhi" },
       { "@type": "City", name: "Delhi" },
       { "@type": "City", name: "Gurugram" },
     ],

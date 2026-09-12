@@ -35,15 +35,15 @@ export const seedGroupB: Seed[] = [
       { value: "5-7 days", label: "Edit turnaround" },
     ],
     faqs: [
-      { q: "Do you shoot at our location or in a studio?", a: "Both. We have a Noida studio for controlled product and interview work, and we travel across the NCR and to other cities for on-location shoots." },
+      { q: "Do you shoot at our location or in a studio?", a: "Both. We have a Delhi studio for controlled product and interview work, and we travel across the NCR and to other cities for on-location shoots." },
       { q: "Do you provide models, actors or voice-over artists?", a: "Yes. Casting, styling, hair and make-up, props and voice-over in Hindi or English are all arranged as part of pre-production." },
       { q: "How many revisions are included?", a: "Two rounds of edit revisions are included in every package. Further rounds are billed hourly, though they are rarely needed because you approve the cut structure before final polish." },
       { q: "Can you make ad creatives for our running campaigns?", a: "That is one of our most requested packages: monthly batches of performance creatives, produced against the angles our media team wants to test." },
     ],
-    seo_title: "Videography & Video Production Company in Noida | Brand & Product Videos",
+    seo_title: "Videography & Video Production Company in Delhi | Brand & Product Videos",
     seo_description:
       "Professional video production: brand films, product videos, reels, ad creatives and testimonials. 4K shoot, in-house editing and platform-ready exports.",
-    seo_keywords: "videography services noida, video production company india, product video shoot, corporate video production, ad film making",
+    seo_keywords: "videography services Delhi, video production company india, product video shoot, corporate video production, ad film making",
   },
   {
     slug: "product-photoshoot",
@@ -75,15 +75,15 @@ export const seedGroupB: Seed[] = [
       { value: "3-5 days", label: "Delivery turnaround" },
     ],
     faqs: [
-      { q: "How do we send you the products?", a: "Courier them to our Noida studio or we arrange a pickup within the NCR. Products are photographed, repacked and returned, or held for your next shoot if you prefer." },
+      { q: "How do we send you the products?", a: "Courier them to our Delhi studio or we arrange a pickup within the NCR. Products are photographed, repacked and returned, or held for your next shoot if you prefer." },
       { q: "What is the per-image cost?", a: "Catalogue images start at a low per-image rate that drops with volume. Lifestyle and model shoots are quoted per shoot day, and you always get the full quote before we begin." },
       { q: "Do you provide models?", a: "Yes, for apparel, jewellery, beauty and lifestyle categories, along with styling and make-up." },
       { q: "Will the images pass Amazon's image quality checks?", a: "Yes. We shoot to the current technical specification for each marketplace, including background colour, minimum resolution and frame-fill rules." },
     ],
-    seo_title: "Product Photoshoot & E-commerce Photography Studio in Noida",
+    seo_title: "Product Photoshoot & E-commerce Photography Studio in Delhi",
     seo_description:
       "Product photography for Amazon, Flipkart and Meesho: white-background catalogue images, lifestyle and model shoots, 360 spins and A+ infographics.",
-    seo_keywords: "product photoshoot noida, ecommerce product photography, amazon product photography, catalogue photography services, model photoshoot india",
+    seo_keywords: "product photoshoot Delhi, ecommerce product photography, amazon product photography, catalogue photography services, model photoshoot india",
   },
   {
     slug: "reels-ad-film-production",
@@ -408,14 +408,14 @@ export const seedGroupB: Seed[] = [
     ],
     faqs: [
       { q: "Do I need an existing seller account?", a: "No. If you do not have one we walk you through registration during the programme. If you do, we use your live account so the work is immediately useful." },
-      { q: "Is the training online or in person?", a: "Both. Live online cohorts run every month, and we run in-person batches and corporate workshops at our Noida office." },
+      { q: "Is the training online or in person?", a: "Both. Live online cohorts run every month, and we run in-person batches and corporate workshops at our Delhi office." },
       { q: "What language are sessions in?", a: "Hindi and English mixed, which is how the industry actually talks. Recordings are available for every session." },
       { q: "Will you help after the course ends?", a: "You get 60 days of doubt clearing in a private group, and many participants later move onto a light-touch consulting retainer." },
     ],
     seo_title: "E-commerce Business Training Course in India | Amazon, Flipkart & Meesho",
     seo_description:
       "Practical 6-week e-commerce seller training on live Amazon, Flipkart and Meesho accounts: product research, listings, ads, unit economics and returns control.",
-    seo_keywords: "ecommerce business training, amazon seller training india, flipkart seller course, meesho seller training, online selling course noida",
+    seo_keywords: "ecommerce business training, amazon seller training india, flipkart seller course, meesho seller training, online selling course Delhi",
   },
   {
     slug: "digital-marketing-training",
@@ -447,9 +447,9 @@ export const seedGroupB: Seed[] = [
     faqs: [
       { q: "Do I need a marketing background?", a: "No. The programme starts from fundamentals, though it moves quickly, so expect around six hours of practice a week." },
     ],
-    seo_title: "Digital Marketing Training Course in Noida | Live Campaign Practice",
+    seo_title: "Digital Marketing Training Course in Delhi | Live Campaign Practice",
     seo_description: "8-week practical digital marketing course covering SEO, Meta Ads, Google Ads, GA4 and automation, taught on live accounts with a portfolio project.",
-    seo_keywords: "digital marketing course noida, digital marketing training india, seo training institute, google ads course with live practice",
+    seo_keywords: "digital marketing course Delhi, digital marketing training india, seo training institute, google ads course with live practice",
   },
   {
     slug: "ecommerce-consulting",
@@ -483,6 +483,6 @@ export const seedGroupB: Seed[] = [
     ],
     seo_title: "E-commerce Growth Consulting for Indian D2C & Marketplace Sellers",
     seo_description: "Monthly e-commerce consulting: account and P&L review, prioritised action plans, hiring support and SOPs for in-house teams.",
-    seo_keywords: "ecommerce consultant india, d2c growth consulting, marketplace consulting services, ecommerce business consultant noida",
+    seo_keywords: "ecommerce consultant india, d2c growth consulting, marketplace consulting services, ecommerce business consultant Delhi",
   },
 ];

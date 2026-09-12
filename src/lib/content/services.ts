@@ -110,9 +110,9 @@ const seed: Seed[] = [
       { q: "Can you redesign my existing website?", a: "Yes. We audit the current site, keep the URLs and rankings that are working, and redirect the rest properly so you do not lose search traffic." },
       { q: "What do you need from me to start?", a: "Logo, brand colours if you have them, a service list and any existing photos or copy. If you have none of that, our creative studio can produce it." },
     ],
-    seo_title: "Website Design & Development Company in Noida | Digital Grow Bazaar",
+    seo_title: "Website Design & Development Company in Delhi | Digital Grow Bazaar",
     seo_description: "Custom website design and development for Indian businesses. Fast, mobile-first, SEO-ready websites with full code ownership and 30 days of free support.",
-    seo_keywords: "website development company, website design noida, business website design, responsive web development, seo friendly website",
+    seo_keywords: "website development company, website design Delhi, business website design, responsive web development, seo friendly website",
   },
   {
     slug: "ecommerce-website-development",
@@ -327,7 +327,7 @@ const seed: Seed[] = [
     ],
     seo_title: "SEO Services Company in India | Technical, Local & E-commerce SEO",
     seo_description: "Result-driven SEO services: technical audits, content clusters, white-hat link building and local SEO with transparent monthly reporting.",
-    seo_keywords: "seo services india, seo company noida, local seo services, technical seo audit, ecommerce seo agency",
+    seo_keywords: "seo services india, seo company Delhi, local seo services, technical seo audit, ecommerce seo agency",
   },
   {
     slug: "social-media-marketing",
@@ -362,7 +362,7 @@ const seed: Seed[] = [
     ],
     seo_title: "Social Media Marketing Agency | Instagram, LinkedIn & YouTube",
     seo_description: "Social media marketing with in-house content production: calendars, reels, carousels, community management and monthly performance reporting.",
-    seo_keywords: "social media marketing agency, instagram marketing india, smm services company, social media management noida",
+    seo_keywords: "social media marketing agency, instagram marketing india, smm services company, social media management Delhi",
   },
   {
     slug: "google-ads-ppc",

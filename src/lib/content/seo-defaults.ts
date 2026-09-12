@@ -9,9 +9,9 @@ export const staticSeoDefaults = [
     path: "/",
     title: "Digital Grow Bazaar | Web Development, Digital Marketing & E-commerce Growth",
     description:
-      "Full-stack growth partner in Noida: website development, SEO and digital marketing, videography and product photoshoots, e-commerce training, and Amazon, Flipkart and Meesho account management.",
+      "Full-stack growth partner in Delhi: website development, SEO and digital marketing, videography and product photoshoots, e-commerce training, and Amazon, Flipkart and Meesho account management.",
     keywords:
-      "digital marketing agency noida, website development company india, ecommerce account management, amazon flipkart meesho seller services, product photoshoot, videography, ecommerce training",
+      "digital marketing agency Delhi, website development company india, ecommerce account management, amazon flipkart meesho seller services, product photoshoot, videography, ecommerce training",
   },
   {
     path: "/services",
@@ -25,8 +25,8 @@ export const staticSeoDefaults = [
     path: "/about",
     title: "About Us | The Team Behind Digital Grow Bazaar",
     description:
-      "Founded in 2017 in Noida, Digital Grow Bazaar is a 40-person team of developers, marketers, editors and marketplace specialists helping Indian brands grow online.",
-    keywords: "about digital grow bazaar, digital marketing agency noida, ecommerce agency india, web development team noida",
+      "Founded in 2017 in Delhi, Digital Grow Bazaar is a 40-person team of developers, marketers, editors and marketplace specialists helping Indian brands grow online.",
+    keywords: "about digital grow bazaar, digital marketing agency Delhi, ecommerce agency india, web development team Delhi",
   },
   {
     path: "/work",
@@ -44,9 +44,9 @@ export const staticSeoDefaults = [
   },
   {
     path: "/contact",
-    title: "Contact Us | Digital Grow Bazaar, Noida",
+    title: "Contact Us | Digital Grow Bazaar, Delhi",
     description:
       "Talk to Digital Grow Bazaar about web development, digital marketing, videography, photoshoots, e-commerce training or Amazon, Flipkart and Meesho account management. Free audit, reply within one working day.",
-    keywords: "contact digital marketing agency noida, ecommerce agency contact, website development enquiry, amazon account management contact",
+    keywords: "contact digital marketing agency Delhi, ecommerce agency contact, website development enquiry, amazon account management contact",
   },
 ];
