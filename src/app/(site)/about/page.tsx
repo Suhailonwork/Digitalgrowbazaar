@@ -113,10 +113,10 @@ export default async function AboutPage() {
             <div className="rounded-4xl border border-ink-100 bg-white p-8">
               <h2 className="font-display text-xl font-bold tracking-tight text-ink-900">Where we work from</h2>
               <p className="mt-3 leading-relaxed text-ink-500">
-                Our office and studio are in Sector 63, Delhi. Roughly two-thirds of our clients are elsewhere in India and work with us entirely
+                Our office and studio are in Maujpur-Shahdara, Delhi. Roughly two-thirds of our clients are elsewhere in India and work with us entirely
                 remotely — Bengaluru, Jaipur, Surat, Ludhiana, Hyderabad and beyond.
               </p>
-              <p className="mt-3 text-sm text-ink-400">{siteConfig.address.street}, {siteConfig.address.city} {siteConfig.address.postalCode}</p>
+              <p className="mt-3 text-sm text-ink-400">{siteConfig.address.full}</p>
             </div>
           </div>
         </div>

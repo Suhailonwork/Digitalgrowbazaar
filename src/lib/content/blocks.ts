@@ -223,7 +223,7 @@ export const aboutTeamBlock: TeamItem[] = [
 
 export const contactFaqsBlock: FAQ[] = [
   { q: "How soon will someone get back to me?", a: "Within one working day, usually the same day if you write before 5 pm IST. Enquiries that come in over the weekend are answered on Monday morning." },
-  { q: "Can I visit your office or studio?", a: "Yes, we are in Sector 63, Delhi. Call ahead so the right specialist is available, and we can show you the photography and video studio while you are here." },
+  { q: "Can I visit your office or studio?", a: "Yes, we are in Maujpur-Shahdara, Delhi. Call ahead so the right specialist is available, and we can show you the photography and video studio while you are here." },
   { q: "Do you offer a free consultation?", a: "Every new enquiry gets a free audit of whatever you share with us — website, ad account or seller panel — plus a 20-minute call to walk you through it." },
   { q: "Do you work with small businesses and new sellers?", a: "Regularly. Around 40% of our clients started with us before their first ₹1 lakh month. We will tell you honestly if a service is premature for your stage." },
 ];

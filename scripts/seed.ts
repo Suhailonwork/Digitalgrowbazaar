@@ -117,7 +117,7 @@ async function main() {
         phone: siteConfig.phone,
         email: siteConfig.email,
         whatsapp: siteConfig.whatsapp,
-        address: `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region} ${siteConfig.address.postalCode}`,
+        address: siteConfig.address.full,
         instagram: siteConfig.socials.instagram,
         facebook: siteConfig.socials.facebook,
         linkedin: siteConfig.socials.linkedin,
