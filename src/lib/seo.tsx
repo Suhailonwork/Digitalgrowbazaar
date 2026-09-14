@@ -96,7 +96,7 @@ export function organizationJsonLd() {
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
-    logo: absoluteUrl("/logo.svg"),
+    logo: absoluteUrl("/logo.png"),
     image: absoluteUrl("/api/og?title=" + encodeURIComponent(siteConfig.name)),
     description: siteConfig.description,
     telephone: siteConfig.phoneHref,

@@ -1,33 +1,24 @@
+import Image from "next/image";
+import logoDark from "@/assets/brand/logo-horizontal.png";
+import logoLight from "@/assets/brand/logo-horizontal-light.png";
+
+/** Rendered height in CSS pixels; the width follows the artwork's aspect ratio. */
+const HEIGHT = 44;
+
 export function Logo({ tone = "dark", className = "" }: { tone?: "dark" | "light"; className?: string }) {
+  // The light artwork swaps the navy lettering for white, for dark backgrounds.
+  const src = tone === "light" ? logoLight : logoDark;
   return (
-    <span className={`flex min-w-0 items-center gap-2.5 ${className}`}>
-      <svg viewBox="0 0 40 40" className="size-9 shrink-0" role="img" aria-label="Digital Grow Bazaar">
-        <defs>
-          <linearGradient id="dgb-mark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#5b57f5" />
-            <stop offset="55%" stopColor="#4a3fe0" />
-            <stop offset="100%" stopColor="#12c7d4" />
-          </linearGradient>
-        </defs>
-        <rect width="40" height="40" rx="12" fill="url(#dgb-mark)" />
-        <path d="M10 27.5V19a2 2 0 0 1 2-2h1.6a2 2 0 0 1 2 2v8.5" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" fill="none" />
-        <path d="M18.2 27.5V14.5a2 2 0 0 1 2-2h1.6a2 2 0 0 1 2 2v13" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" fill="none" opacity=".78" />
-        <path d="M26.4 27.5v-5.2" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" opacity=".55" />
-        <circle cx="27.7" cy="14.2" r="2.6" fill="#fff" />
-      </svg>
-      <span className="min-w-0 leading-none">
-        <span
-          className={`block truncate font-display text-[0.98rem] font-extrabold tracking-tight sm:text-[1.05rem] ${
-            tone === "light" ? "text-white" : "text-ink-900"
-          }`}
-        >
-          Digital Grow<span className="text-brand-500"> Bazaar</span>
-        </span>
-        {/* The strapline is the first thing to go when the bar gets tight. */}
-        <span className="mt-1 hidden truncate text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-ink-400 min-[380px]:block">
-          Growth Partners
-        </span>
-      </span>
+    <span className={`flex min-w-0 items-center ${className}`}>
+      <Image
+        src={src}
+        alt="Digital Grow Bazaar"
+        width={Math.round((src.width / src.height) * HEIGHT)}
+        height={HEIGHT}
+        loading="eager"
+        // object-contain keeps the proportions when a tight header squeezes the width.
+        className="h-10 w-auto max-w-full object-contain object-left sm:h-11"
+      />
     </span>
   );
 }
